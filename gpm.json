@@ -223,6 +223,20 @@
     "name": "Android Multi Dex Library",
     "description": "Library for legacy multi-dex support"
    }
+  },
+  {
+   "id": 17,
+   "type": "implementation",
+   "installed_name": "startup",
+   "gpm_dep": {
+    "artifact_id": "startup-runtime",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.startup/startup-runtime",
+    "get_from": "Google",
+    "group_id": "androidx.startup",
+    "name": "Android App Startup Runtime",
+    "description": "Android App Startup Runtime"
+   }
   }
  ]
 }

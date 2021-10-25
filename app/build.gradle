@@ -95,4 +95,7 @@ dependencies {
 
     // Android Multi Dex Library : Library for legacy multi-dex support
     implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Android App Startup Runtime : Android App Startup Runtime
+    implementation 'androidx.startup:startup-runtime:1.1.0'
 }
