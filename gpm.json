@@ -1,0 +1,228 @@
+{
+ "added": [
+  {
+   "id": 1,
+   "type": "implementation",
+   "installed_name": "hilt",
+   "gpm_dep": {
+    "artifact_id": "hilt-android",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.google.dagger/hilt-android",
+    "get_from": "Central",
+    "group_id": "com.google.dagger",
+    "name": "Hilt Android",
+    "description": "A fast dependency injector for Android and Java."
+   }
+  },
+  {
+   "id": 2,
+   "type": "implementation",
+   "installed_name": "timber",
+   "gpm_dep": {
+    "artifact_id": "timber",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.jakewharton.timber/timber",
+    "get_from": "Central",
+    "group_id": "com.jakewharton.timber",
+    "name": "Timber",
+    "description": "No-nonsense injectable logging."
+   }
+  },
+  {
+   "id": 3,
+   "type": "implementation",
+   "installed_name": "retrofit",
+   "gpm_dep": {
+    "artifact_id": "retrofit",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit",
+    "get_from": "Central",
+    "group_id": "com.squareup.retrofit2",
+    "name": "Retrofit",
+    "description": "A type-safe HTTP client for Android and Java."
+   }
+  },
+  {
+   "id": 4,
+   "type": "implementation",
+   "installed_name": "retrofit-converter",
+   "gpm_dep": {
+    "artifact_id": "converter-gson",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson",
+    "get_from": "Central",
+    "group_id": "com.squareup.retrofit2",
+    "name": "Converter: Gson",
+    "description": "A Retrofit Converter which uses Gson for serialization."
+   }
+  },
+  {
+   "id": 5,
+   "type": "implementation",
+   "installed_name": "retrofit-converter",
+   "gpm_dep": {
+    "artifact_id": "converter-moshi",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-moshi",
+    "get_from": "Central",
+    "group_id": "com.squareup.retrofit2",
+    "name": "Converter: Moshi",
+    "description": "A Retrofit Converter which uses Moshi for serialization."
+   }
+  },
+  {
+   "id": 6,
+   "type": "implementation",
+   "installed_name": "okhttp",
+   "gpm_dep": {
+    "artifact_id": "okhttp",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp",
+    "get_from": "Central",
+    "group_id": "com.squareup.okhttp3",
+    "name": "OkHttp",
+    "description": "Square’s meticulous HTTP client for Java and Kotlin."
+   }
+  },
+  {
+   "id": 7,
+   "type": "implementation",
+   "installed_name": "okhttp",
+   "gpm_dep": {
+    "artifact_id": "logging-interceptor",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor",
+    "get_from": "Central",
+    "group_id": "com.squareup.okhttp3",
+    "name": "OkHttp Logging Interceptor",
+    "description": "Square’s meticulous HTTP client for Java and Kotlin."
+   }
+  },
+  {
+   "id": 8,
+   "type": "implementation",
+   "installed_name": "rxjava",
+   "gpm_dep": {
+    "artifact_id": "rxjava",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxjava",
+    "get_from": "Central",
+    "group_id": "io.reactivex.rxjava3",
+    "name": "RxJava",
+    "description": "Reactive Extensions for Java"
+   }
+  },
+  {
+   "id": 9,
+   "type": "implementation",
+   "installed_name": "rxjava",
+   "gpm_dep": {
+    "artifact_id": "adapter-rxjava",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava",
+    "get_from": "Central",
+    "group_id": "com.squareup.retrofit2",
+    "name": "Adapter: RxJava",
+    "description": "A Retrofit CallAdapter for RxJava's stream types."
+   }
+  },
+  {
+   "id": 10,
+   "type": "implementation",
+   "installed_name": "lifecycle",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-runtime",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-runtime",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "Android Lifecycle Runtime",
+    "description": "Android Lifecycle Runtime"
+   }
+  },
+  {
+   "id": 11,
+   "type": "implementation",
+   "installed_name": "lifecycle",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-viewmodel",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "Android Lifecycle ViewModel",
+    "description": "Android Lifecycle ViewModel"
+   }
+  },
+  {
+   "id": 12,
+   "type": "implementation",
+   "installed_name": "lifecycle",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-livedata",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "Android Lifecycle LiveData",
+    "description": "Android Lifecycle LiveData"
+   }
+  },
+  {
+   "id": 13,
+   "type": "implementation",
+   "installed_name": "lifecycle",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-viewmodel-ktx",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "Android Lifecycle ViewModel Kotlin Extensions",
+    "description": "Kotlin extensions for 'viewmodel' artifact"
+   }
+  },
+  {
+   "id": 14,
+   "type": "implementation",
+   "installed_name": "lifecycle",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-extensions",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-extensions",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "Android Lifecycle Extensions",
+    "description": "Android Lifecycle Extensions"
+   }
+  },
+  {
+   "id": 15,
+   "type": "implementation",
+   "installed_name": "activity",
+   "gpm_dep": {
+    "artifact_id": "activity-ktx",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.activity/activity-ktx",
+    "get_from": "Google",
+    "group_id": "androidx.activity",
+    "name": "Activity Kotlin Extensions",
+    "description": "Kotlin extensions for 'activity' artifact"
+   }
+  },
+  {
+   "id": 16,
+   "type": "implementation",
+   "installed_name": "multidex",
+   "gpm_dep": {
+    "artifact_id": "multidex",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.multidex/multidex",
+    "get_from": "Google",
+    "group_id": "androidx.multidex",
+    "name": "Android Multi Dex Library",
+    "description": "Library for legacy multi-dex support"
+   }
+  }
+ ]
+}
