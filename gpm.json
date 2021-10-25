@@ -237,6 +237,34 @@
     "name": "Android App Startup Runtime",
     "description": "Android App Startup Runtime"
    }
+  },
+  {
+   "id": 18,
+   "type": "implementation",
+   "installed_name": "rxjava3",
+   "gpm_dep": {
+    "artifact_id": "adapter-rxjava3",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava3",
+    "get_from": "Central",
+    "group_id": "com.squareup.retrofit2",
+    "name": "Adapter: RxJava 3",
+    "description": "A Retrofit CallAdapter for RxJava 3's stream types."
+   }
+  },
+  {
+   "id": 19,
+   "type": "implementation",
+   "installed_name": "rxandroid",
+   "gpm_dep": {
+    "artifact_id": "rxandroid",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxandroid",
+    "get_from": "Central",
+    "group_id": "io.reactivex.rxjava3",
+    "name": "RxAndroid",
+    "description": "RxAndroid"
+   }
   }
  ]
 }

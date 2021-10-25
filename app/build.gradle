@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
 }
 
+apply plugin: 'dagger.hilt.android.plugin'
+
 android {
     compileSdk 31
 
@@ -75,8 +77,8 @@ dependencies {
     // RxJava : Reactive Extensions for Java
     implementation 'io.reactivex.rxjava3:rxjava:3.1.2'
 
-    // Adapter: RxJava : A Retrofit CallAdapter for RxJava's stream types.
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.9.0'
+    // Adapter: RxJava 3 : A Retrofit CallAdapter for RxJava 3's stream types.
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
     // Android Lifecycle Runtime : Android Lifecycle Runtime
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-rc01'
@@ -98,4 +100,7 @@ dependencies {
 
     // Android App Startup Runtime : Android App Startup Runtime
     implementation 'androidx.startup:startup-runtime:1.1.0'
+
+    // RxAndroid : RxAndroid
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 }

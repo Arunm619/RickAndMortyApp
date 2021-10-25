@@ -3,18 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="io.arunbuilds.rickandmorty">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".RickAndMortyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".RickAndMortyApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RickAndMorty">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/title_activity_main">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +30,8 @@
             android:exported="false"
             tools:node="merge">
             <!-- This entry makes TimberInitializer discoverable. -->
-            <meta-data  android:name="io.arunbuilds.rickandmorty.initializers.TimberInitializer"
+            <meta-data
+                android:name="io.arunbuilds.rickandmorty.initializers.TimberInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>
