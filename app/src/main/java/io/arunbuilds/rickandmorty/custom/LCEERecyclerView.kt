@@ -12,6 +12,8 @@ import io.arunbuilds.rickandmorty.databinding.LayoutEmptyBinding
 import io.arunbuilds.rickandmorty.databinding.LayoutErrorBinding
 import io.arunbuilds.rickandmorty.databinding.LayoutLoadingBinding
 import io.arunbuilds.rickandmorty.databinding.LceeRecyclerLayoutBinding
+import io.arunbuilds.rickandmorty.util.hide
+import io.arunbuilds.rickandmorty.util.show
 
 /**
  * Custom recycler view with integrated error, empty and loading view
@@ -34,7 +36,7 @@ class LCEERecyclerView constructor(
 
     // expose the recycler view
     val recyclerView: RecyclerView
-    get() = binding.customRecyclerView
+        get() = binding.customRecyclerView
 
     var errorText: String = ""
         set(value) {
@@ -66,12 +68,13 @@ class LCEERecyclerView constructor(
 
         context.theme.obtainStyledAttributes(
             attrs,
-         R.styleable.CustomRecyclerView,
+            R.styleable.CustomRecyclerView,
             0,
             0
         ).apply {
             try {
-                errorText = getString(R.styleable.CustomRecyclerView_errorText) ?: "Something went wrong"
+                errorText =
+                    getString(R.styleable.CustomRecyclerView_errorText) ?: "Something went wrong"
                 emptyText =
                     getString(R.styleable.CustomRecyclerView_emptyText) ?: "Nothing to show"
                 errorIcon = getResourceId(
@@ -79,7 +82,10 @@ class LCEERecyclerView constructor(
                     R.drawable.ic_error
                 )
                 emptyIcon =
-                    getResourceId(R.styleable.CustomRecyclerView_emptyIcon, R.drawable.ic_characters)
+                    getResourceId(
+                        R.styleable.CustomRecyclerView_emptyIcon,
+                        R.drawable.ic_characters
+                    )
             } finally {
                 recycle()
             }
@@ -98,24 +104,23 @@ class LCEERecyclerView constructor(
 
     fun showErrorView(msg: String? = null) {
         errorText = msg ?: errorText
-        loadingBinding.root.visibility = View.GONE
-        emptyBinding.root.visibility = View.GONE
-
-        errorBinding.root.visibility = View.VISIBLE
+        binding.customRecyclerView.hide()
+        loadingBinding.root.hide()
+        emptyBinding.root.hide()
+        errorBinding.root.show()
     }
 
     fun showLoadingView() {
-        emptyBinding.root.visibility = View.GONE
-        errorBinding.root.visibility = View.GONE
-
-        loadingBinding.root.visibility = View.VISIBLE
+        emptyBinding.root.hide()
+        errorBinding.root.hide()
+        loadingBinding.root.show()
     }
 
     fun hideAllViews() {
-        loadingBinding.root.visibility = View.GONE
-        errorBinding.root.visibility = View.GONE
-        emptyBinding.root.visibility = View.GONE
-        binding.customRecyclerView.visibility = View.VISIBLE
+        loadingBinding.root.hide()
+        errorBinding.root.hide()
+        emptyBinding.root.hide()
+        binding.customRecyclerView.show()
     }
 
     fun setOnRetryClickListener(callback: () -> Unit) {

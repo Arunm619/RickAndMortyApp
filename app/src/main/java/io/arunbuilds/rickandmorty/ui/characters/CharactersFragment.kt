@@ -89,6 +89,7 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterClickListener 
                 binding.rvCharacter.setOnRetryClickListener {
                     charactersAdapter.retry()
                 }
+                binding.rvCharacter.hideAllViews()
                 binding.rvCharacter.showErrorView(msg = (loadState.source.refresh as LoadState.Error).error.message)
             }
         }
@@ -100,14 +101,16 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterClickListener 
         observe(connectivityManager.isNetworkAvailable) { isNetworkAvailable ->
             binding.networkStatusBanner.run {
                 if (isNetworkAvailable) {
-                    //TODO make the internet banner appear wisely.
-                    if (tvInternetNotAvailableStatusBanner.isVisible)
-                        tvInternetAvailableStatusBanner.showForSecond(3)
-                    tvInternetNotAvailableStatusBanner.hide()
+                    // when the error is currently being shown and when the internet is back, show internet is back for 3 seconds.
                     if (binding.rvCharacter.isErrorViewShown()) {
                         viewModel.onRefresh()
+                        if (tvInternetNotAvailableStatusBanner.isVisible) {
+                            tvInternetAvailableStatusBanner.showForSecond(3)
+                            tvInternetNotAvailableStatusBanner.hide()
+                        }
                     }
                 } else {
+                    // Show no internet card when there is no internet :P
                     tvInternetAvailableStatusBanner.hide()
                     tvInternetNotAvailableStatusBanner.show()
                 }
