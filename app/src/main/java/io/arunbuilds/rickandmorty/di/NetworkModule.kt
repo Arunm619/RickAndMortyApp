@@ -6,8 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.arunbuilds.rickandmorty.Constants.BASE_URL
-import io.arunbuilds.rickandmorty.network.api.RickAndMortyAPI
+import io.arunbuilds.rickandmorty.network.api.RMCharactersAPI
+import io.arunbuilds.rickandmorty.util.Constants.BASE_URL
+import io.arunbuilds.rickandmorty.util.connectivity.ConnectivityInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,14 +22,20 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule {
+class NetworkModule {
 
     @Provides
     @Singleton
     fun loggingInterceptor(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor { message -> Timber.i(message) }
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC)
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         return interceptor
+    }
+
+    @Provides
+    @Singleton
+    fun connectivityInterceptor(@ApplicationContext context: Context): ConnectivityInterceptor {
+        return ConnectivityInterceptor(context)
     }
 
     @Provides
@@ -45,16 +52,19 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun okHttpClient(loggingInterceptor: HttpLoggingInterceptor, cache: Cache): OkHttpClient {
-        return loggingInterceptor.let {
-            OkHttpClient.Builder()
-                .addInterceptor(it)
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .cache(cache)
-                .build()
-        }
+    fun okHttpClient(
+        connectivityInterceptor: ConnectivityInterceptor,
+        loggingInterceptor: HttpLoggingInterceptor,
+        cache: Cache
+    ): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .addInterceptor(connectivityInterceptor)
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .cache(cache)
+            .build()
     }
 
     @Provides
@@ -70,9 +80,9 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRickAndMortyAPI(
+    fun provideRickAndMortyCharactersAPI(
         retrofit: Retrofit
-    ): RickAndMortyAPI {
-        return retrofit.create(RickAndMortyAPI::class.java)
+    ): RMCharactersAPI {
+        return retrofit.create(RMCharactersAPI::class.java)
     }
 }

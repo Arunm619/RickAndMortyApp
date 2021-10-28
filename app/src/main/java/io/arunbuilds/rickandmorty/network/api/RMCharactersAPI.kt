@@ -5,11 +5,11 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface RickAndMortyAPI {
+interface RMCharactersAPI {
     @GET("/api/character")
     fun getAllCharacters(@Query("page") page: Int): Single<CharacterResponse>
 
     companion object {
-        const val DEFAULT_PAGE_NUMBER = 1
+        const val DEFAULT_PAGE_INDEX = 1
     }
 }

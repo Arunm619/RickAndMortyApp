@@ -1,4 +1,4 @@
-package io.arunbuilds.rickandmorty.util
+package io.arunbuilds.rickandmorty.util.schedulers
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Scheduler
