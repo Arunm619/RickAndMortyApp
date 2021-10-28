@@ -20,9 +20,9 @@
         <io.arunbuilds.rickandmorty.custom.LCEERecyclerView
             android:id="@+id/rvCharacter"
             android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:visibility="visible"
             app:emptyIcon="@drawable/ic_characters"
             app:emptyText="Oops! Nothing Here"

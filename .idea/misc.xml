@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.18541876892028256" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.19701086956521738" />
         <entry key="app/src/main/res/layout/item_character_loader.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/item_episode.xml" value="0.24782902997306697" />
         <entry key="app/src/main/res/layout/layout_character_loader.xml" value="0.19701086956521738" />
         <entry key="app/src/main/res/layout/layout_connection_status.xml" value="0.17835519677093845" />
         <entry key="app/src/main/res/layout/layout_empty.xml" value="0.19701086956521738" />

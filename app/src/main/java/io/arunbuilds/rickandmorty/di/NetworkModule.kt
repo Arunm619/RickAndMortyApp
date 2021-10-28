@@ -7,6 +7,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.arunbuilds.rickandmorty.network.api.RMCharactersAPI
+import io.arunbuilds.rickandmorty.network.api.RMEpisodesAPI
 import io.arunbuilds.rickandmorty.util.Constants.BASE_URL
 import io.arunbuilds.rickandmorty.util.connectivity.ConnectivityInterceptor
 import okhttp3.Cache
@@ -84,5 +85,13 @@ class NetworkModule {
         retrofit: Retrofit
     ): RMCharactersAPI {
         return retrofit.create(RMCharactersAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideRickAndMortyEpisodesAPI(
+        retrofit: Retrofit
+    ): RMEpisodesAPI {
+        return retrofit.create(RMEpisodesAPI::class.java)
     }
 }
