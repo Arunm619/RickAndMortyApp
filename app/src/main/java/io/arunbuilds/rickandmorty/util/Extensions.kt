@@ -1,9 +1,14 @@
 package io.arunbuilds.rickandmorty.util
 
 import android.view.View
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import com.google.android.material.textview.MaterialTextView
+import io.arunbuilds.rickandmorty.R
+import io.arunbuilds.rickandmorty.model.response.characters.Status
 
 
 const val MILLISECONDS_IN_ONE_SECOND = 1000L
@@ -62,3 +67,16 @@ inline fun View.hideIf(predicate: () -> Boolean): View {
 fun <T> LifecycleOwner.observe(liveData: LiveData<T>?, observer: (T) -> Unit) =
     liveData?.observe(this, Observer(observer))
 
+fun MaterialTextView.status(status: Status) {
+    text = status.toString()
+    when (status) {
+        Status.ALIVE -> setDrawableLeft(R.color.green_a700)
+        Status.DEAD -> setDrawableLeft(R.color.red_a700)
+        Status.UNKNOWN -> setDrawableLeft(R.color.gray_700)
+    }
+}
+
+fun MaterialTextView.setDrawableLeft(@ColorRes res: Int) {
+    if (compoundDrawables[0] == null) return
+    compoundDrawables[0]?.setTint(ContextCompat.getColor(context, res))
+}

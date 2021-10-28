@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import io.arunbuilds.rickandmorty.databinding.ItemCharacterBinding
 import io.arunbuilds.rickandmorty.model.response.characters.Character
+import io.arunbuilds.rickandmorty.util.status
 import javax.inject.Inject
 
 class CharactersAdapter @Inject constructor() :
@@ -52,14 +53,12 @@ class CharactersAdapter @Inject constructor() :
 
         fun bind(character: Character) {
             with(binding) {
-                Glide.with(ivPoster.context)
+                Glide.with(ivAvatar.context)
                     .load(character.image)
-                    .into(ivPoster)
+                    .into(ivAvatar)
                 tvName.text = character.name
-                tvLocation.text = character.location.toString()
-                tvSomeBigText.text = character.toString()
+                tvStatus.status(character.status)
             }
-
         }
     }
 

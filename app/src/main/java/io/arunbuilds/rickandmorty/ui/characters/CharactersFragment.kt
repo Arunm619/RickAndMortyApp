@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import io.arunbuilds.rickandmorty.databinding.FragmentCharactersBinding
 import io.arunbuilds.rickandmorty.databinding.ItemCharacterBinding
@@ -57,7 +57,7 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterClickListener 
 
     private fun setUpRecyclerViews() {
         binding.rvCharacter.recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = GridLayoutManager(requireContext(), 3)
             charactersAdapter.characterClickListener = this@CharactersFragment
             adapter = charactersAdapter.withLoadStateHeaderAndFooter(
                 CharacterLoadStateAdapter { charactersAdapter.retry() },
@@ -105,9 +105,13 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterClickListener 
                     if (binding.rvCharacter.isErrorViewShown()) {
                         viewModel.onRefresh()
                         if (tvInternetNotAvailableStatusBanner.isVisible) {
-                            tvInternetAvailableStatusBanner.showForSecond(3)
                             tvInternetNotAvailableStatusBanner.hide()
+                            tvInternetAvailableStatusBanner.showForSecond(3)
                         }
+                    }
+                    // when the list is present with few items but internet was not available, but is back now remove the no internet banner
+                    if (tvInternetNotAvailableStatusBanner.isVisible) {
+                        tvInternetNotAvailableStatusBanner.hide()
                     }
                 } else {
                     // Show no internet card when there is no internet :P

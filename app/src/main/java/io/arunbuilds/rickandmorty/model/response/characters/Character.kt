@@ -23,7 +23,7 @@ data class Character(
     @SerializedName("species")
     val species: String?,
     @SerializedName("status")
-    val status: String?,
+    val status: Status,
     @SerializedName("type")
     val type: String?,
     @SerializedName("url")
