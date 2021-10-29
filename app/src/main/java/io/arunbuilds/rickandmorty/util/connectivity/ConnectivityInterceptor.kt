@@ -20,8 +20,6 @@ class ConnectivityInterceptor(private val context: Context) : Interceptor {
             chain.proceed(chain.request())
         }
     }
-
-
 }
 
 class NoConnectivityException : IOException() {

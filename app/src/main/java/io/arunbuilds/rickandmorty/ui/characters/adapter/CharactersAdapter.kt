@@ -6,6 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import io.arunbuilds.rickandmorty.databinding.ItemCharacterBinding
 import io.arunbuilds.rickandmorty.model.response.characters.Character
 import io.arunbuilds.rickandmorty.util.status
@@ -55,6 +56,7 @@ class CharactersAdapter @Inject constructor() :
             with(binding) {
                 Glide.with(ivAvatar.context)
                     .load(character.image)
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .into(ivAvatar)
                 tvName.text = character.name
                 tvStatus.status(character.status)

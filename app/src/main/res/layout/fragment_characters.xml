@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="match_parent"
             android:visibility="visible"
             app:emptyIcon="@drawable/ic_characters"

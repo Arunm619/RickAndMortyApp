@@ -49,9 +49,13 @@ class EpisodesFragment : Fragment(), EpisodesAdapter.EpisodeClickListener {
         _binding = FragmentEpisodesBinding.inflate(inflater, container, false)
         val root: View = binding.root
         connectivityManager.registerConnectionObserver(this)
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setUpRecyclerViews()
         observeLiveData()
-        return root
     }
 
 

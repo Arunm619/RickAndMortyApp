@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_characters.xml" value="0.221875" />
         <entry key="app/src/main/res/drawable/ic_error.xml" value="0.221875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19701086956521738" />
+        <entry key="app/src/main/res/layout/detailed_character_fragment.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_characters.xml" value="0.18541876892028256" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.18541876892028256" />
         <entry key="app/src/main/res/layout/fragment_episodes.xml" value="0.18541876892028256" />

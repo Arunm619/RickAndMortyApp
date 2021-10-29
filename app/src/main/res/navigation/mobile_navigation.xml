@@ -9,17 +9,32 @@
         android:id="@+id/navigation_characters"
         android:name="io.arunbuilds.rickandmorty.ui.characters.CharactersFragment"
         android:label="@string/title_characters"
-        tools:layout="@layout/fragment_locations" />
+        tools:layout="@layout/fragment_characters">
+        <action
+            android:id="@+id/action_navigation_characters_to_detailedCharacterFragment"
+            app:destination="@id/detailedCharacterFragment"
+            app:launchSingleTop="false" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_episodes"
         android:name="io.arunbuilds.rickandmorty.ui.episodes.EpisodesFragment"
         android:label="@string/title_episodes"
-        tools:layout="@layout/fragment_characters" />
+        tools:layout="@layout/fragment_episodes" />
 
     <fragment
         android:id="@+id/navigation_locations"
         android:name="io.arunbuilds.rickandmorty.ui.locations.LocationsFragment"
         android:label="@string/title_locations"
-        tools:layout="@layout/fragment_episodes" />
+        tools:layout="@layout/fragment_locations" />
+    <fragment
+        android:id="@+id/detailedCharacterFragment"
+        android:name="io.arunbuilds.rickandmorty.ui.characters.details.DetailedCharacterFragment"
+        android:label="DetailedCharacterFragment"
+        tools:layout="@layout/detailed_character_fragment">
+        <argument
+            android:name="character"
+            app:argType="io.arunbuilds.rickandmorty.model.response.characters.Character"
+            app:nullable="false" />
+    </fragment>
 </navigation>
