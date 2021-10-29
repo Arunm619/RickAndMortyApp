@@ -6,7 +6,6 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.arunbuilds.rickandmorty.databinding.ItemEpisodeBinding
-import io.arunbuilds.rickandmorty.model.response.characters.Character
 import io.arunbuilds.rickandmorty.model.response.episodes.Episode
 import javax.inject.Inject
 

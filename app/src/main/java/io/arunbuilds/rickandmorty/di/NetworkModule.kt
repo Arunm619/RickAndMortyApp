@@ -1,6 +1,7 @@
 package io.arunbuilds.rickandmorty.di
 
 import android.content.Context
+import androidx.paging.PagingConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -93,5 +94,17 @@ class NetworkModule {
         retrofit: Retrofit
     ): RMEpisodesAPI {
         return retrofit.create(RMEpisodesAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun pagingConfig(): PagingConfig {
+        return PagingConfig(
+            pageSize = 10,
+            enablePlaceholders = false,
+            maxSize = 20,
+            prefetchDistance = 5,
+            initialLoadSize = 30
+        )
     }
 }

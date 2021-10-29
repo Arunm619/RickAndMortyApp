@@ -10,17 +10,13 @@ import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
 class CharactersRepositoryImpl @Inject constructor(
-    private val pagingSource: RMCharactersPagingSource
+    private val pagingSource: RMCharactersPagingSource,
+    private val pagingConfig: PagingConfig
 ) : CharactersRepository {
     override fun getAllCharacters(): Flowable<PagingData<Character>> {
         return Pager(
-            config = PagingConfig(
-                pageSize = 10,
-                enablePlaceholders = true,
-                maxSize = 20,
-                prefetchDistance = 5,
-                initialLoadSize = 10
-            ), pagingSourceFactory = { pagingSource }
+            config = pagingConfig,
+            pagingSourceFactory = { pagingSource }
         ).flowable
     }
 }
