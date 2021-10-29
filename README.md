@@ -4,6 +4,7 @@
 This app is a playground for me to learn about the latest android libraries by building a modern android app.
 This app consumes the https://rickandmortyapi.com/ to show the characters, locations and episodes details of the mad scientist series, *_Rick and Morty._*
 
+Work In Progress 🚧👷🔧️👷‍♀️⛏
 
 
 ## Tech Stack
